@@ -7,6 +7,7 @@ import com.hongyuanzhai.myapplication.Fragment.BookFragment;
 import com.hongyuanzhai.myapplication.Fragment.GameFragment;
 import com.hongyuanzhai.myapplication.Fragment.HomeFragment;
 import com.hongyuanzhai.myapplication.Fragment.MusicFragment;
+import com.hongyuanzhai.myapplication.utils.ToastUtils;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
+        ToastUtils.init(this);
         fragment = findViewById(R.id.fragment);
         //首先实例化
         fragments = getFragments();
@@ -72,4 +74,10 @@ public class MainActivity extends AppCompatActivity {
         return fragments;
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ToastUtils.cancel();
+    }
 }

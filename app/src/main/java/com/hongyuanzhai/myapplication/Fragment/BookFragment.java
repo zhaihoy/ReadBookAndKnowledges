@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -19,6 +20,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.hongyuanzhai.myapplication.R;
+import com.hongyuanzhai.myapplication.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -105,6 +107,35 @@ public class BookFragment extends androidx.fragment.app.Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu, menu);
         super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.action_search:
+                ToastUtils.show("小哥暂时还没接入");
+                break;
+            case R.id.action_login:
+                ToastUtils.show("小哥暂时还没接入");
+                break;
+            case R.id.action_my_message:
+                ToastUtils.show("小哥暂时还没接入");
+                break;
+            case R.id.action_download:
+                ToastUtils.show("小哥暂时还没接入");
+                break;
+            case R.id.action_sync_bookshelf:
+                ToastUtils.show("小哥暂时还没接入");
+                break;
+            default:
+                break;
+
+
+        }
+
+        return true;
     }
 
     /**

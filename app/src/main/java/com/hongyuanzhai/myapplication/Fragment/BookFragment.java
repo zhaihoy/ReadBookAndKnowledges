@@ -3,12 +3,15 @@ package com.hongyuanzhai.myapplication.Fragment;
 import android.app.ActionBar;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -40,8 +43,14 @@ public class BookFragment extends androidx.fragment.app.Fragment {
     private TabLayout tb;
     private ViewPager mVp;
     private ArrayList<Fragment> mFragmentList = new ArrayList<>();
-    ArrayList<String> titles = new ArrayList<>(Arrays.asList("书架", "热门", "我的"));
-    private Toolbar mToolBar;
+    ArrayList<String> titles;
+    private androidx.appcompat.widget.Toolbar mToolBar;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
     @Nullable
     @Override
@@ -61,24 +70,52 @@ public class BookFragment extends androidx.fragment.app.Fragment {
         tb.setupWithViewPager(mVp);
         mVp.setOffscreenPageLimit(3);
         mVp.setAdapter(new mTabLayoutAdapter(getFragmentManager()));
+//        initTabClick();
     }
 
+//    private void initTabClick() {
+//        tb.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//            @Override
+//            public void onTabSelected(TabLayout.Tab tab) {
+//
+//            }
+//
+//            @Override
+//            public void onTabUnselected(TabLayout.Tab tab) {
+//
+//            }
+//
+//            @Override
+//            public void onTabReselected(TabLayout.Tab tab) {
+//
+//            }
+//        });
+//
+//    }
+
     private void initToolBar() {
+        AppCompatActivity appCompatActivity = (AppCompatActivity) getActivity();
+        appCompatActivity.setSupportActionBar(mToolBar);
         if (mToolBar != null) {
             setUpToolbar(mToolBar);
         }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
     /**
      * @param mToolBar 处理ToolBar
      */
     private void setUpToolbar(Toolbar mToolBar) {
-        mToolBar.setLogo(R.mipmap.biker);
-        mToolBar.setTitle("00");
-
+        mToolBar.setTitle("E-Book");
     }
 
     private void initFragment() {
+        initTitle();
         Fragment bookShelfFragment = new BookShelfFragment();
         Fragment communityFragment = new CommunityFragment();
         Fragment discoveryFragment = new FindFragment();
@@ -87,6 +124,10 @@ public class BookFragment extends androidx.fragment.app.Fragment {
         mFragmentList.add(discoveryFragment);
     }
 
+    private void initTitle() {
+        ArrayList<String> titles = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.nb_fragment_title)));
+        this.titles = titles;
+    }
 
     /**
      * inner class

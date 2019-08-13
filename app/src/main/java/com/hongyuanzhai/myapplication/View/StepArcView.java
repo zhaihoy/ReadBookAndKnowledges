@@ -1,8 +1,5 @@
 package com.hongyuanzhai.myapplication.View;
 
-/**
- * Created by yuandl on 2016-11-08.
- */
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -20,10 +17,7 @@ import androidx.annotation.RequiresApi;
 import com.hongyuanzhai.myapplication.R;
 
 
-/**
- * Created by DylanAndroid on 2016/5/26.
- * 显示步数的圆弧
- */
+
 public class StepArcView extends View {
 
     /**

@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,9 +15,12 @@
         android:theme="@style/Theme.ToolBar.Menu"/>
   <com.google.android.material.tabs.TabLayout
       android:id="@+id/tb"
+      android:layout_height="wrap_content"
       android:layout_width="match_parent"
       android:background="@color/colorPrimary"
-      android:layout_height="80dp"/>
+      app:tabIndicatorColor="@color/white"
+      app:tabSelectedTextColor="@color/white"
+      app:tabTextColor="@color/translucent_text"/>
    <androidx.viewpager.widget.ViewPager
        android:id="@+id/vp"
        android:layout_width="match_parent"

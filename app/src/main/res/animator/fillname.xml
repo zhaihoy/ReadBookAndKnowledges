@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="together">
+    <objectAnimator
+        android:duration="1500"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        android:propertyName="TranslationX"
+        android:valueFrom="0"
+        android:valueTo="400"
+        android:repeatCount="1"
+        android:repeatMode="reverse"/>
+    <objectAnimator
+        android:duration="1500"
+        android:propertyName="BackgroundColor"
+        android:valueFrom="@color/colorAccent"
+        android:valueTo="@color/colorPrimary"
+        android:repeatCount="1"
+        android:repeatMode="reverse"
+        android:valueType="colorType"
+        />
+
+</set>

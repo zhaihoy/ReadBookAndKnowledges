@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true">
+
+        <Button
+            android:id="@+id/bt_1"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:text="抛物线"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/bt_2"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:text="水平"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/bt_3"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="80dp"
+            android:text="旋转"
+            android:textSize="12sp" />
+
+
+        <Button
+            android:id="@+id/bt_4"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="120dp"
+            android:text="sports"
+            android:textSize="12sp" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="@mipmap/biker" />
+
+    <com.hongyuanzhai.myapplication.View.StepArcView
+        android:layout_centerVertical="true"
+        android:id="@+id/step"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" /> />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="200dp">
+
+        <com.hongyuanzhai.myapplication.View.Windmill
+            android:id="@+id/windmill_big"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentLeft="true"
+            app:windLengthPerent="0.35"
+            app:windmillColors="@color/colorPrimary" />
+
+        <com.hongyuanzhai.myapplication.View.Windmill
+            android:id="@+id/windmill_small"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignBottom="@+id/windmill_big"
+            android:layout_alignParentRight="true"
+            app:windLengthPerent="0.35"
+            app:windmillColors="@color/colorPrimary" />
+    </RelativeLayout>
+
+</RelativeLayout>

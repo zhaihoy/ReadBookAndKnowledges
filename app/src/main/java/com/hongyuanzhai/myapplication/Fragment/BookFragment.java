@@ -59,6 +59,7 @@ public class BookFragment extends androidx.fragment.app.Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.bookread_root, container, false);
         initView();
+        System.out.println("=====第  n  次====");
         return view;
     }
 
@@ -72,28 +73,8 @@ public class BookFragment extends androidx.fragment.app.Fragment {
         tb.setupWithViewPager(mVp);
         mVp.setOffscreenPageLimit(3);
         mVp.setAdapter(new mTabLayoutAdapter(getFragmentManager()));
-//        initTabClick();
     }
 
-//    private void initTabClick() {
-//        tb.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-//            @Override
-//            public void onTabSelected(TabLayout.Tab tab) {
-//
-//            }
-//
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-//
-//            }
-//
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-//
-//            }
-//        });
-//
-//    }
 
     private void initToolBar() {
         AppCompatActivity appCompatActivity = (AppCompatActivity) getActivity();
@@ -147,12 +128,14 @@ public class BookFragment extends androidx.fragment.app.Fragment {
 
     private void initFragment() {
         initTitle();
+        System.out.println("=====initFragment==");
         Fragment bookShelfFragment = new BookShelfFragment();
         Fragment communityFragment = new CommunityFragment();
         Fragment discoveryFragment = new FindFragment();
         mFragmentList.add(bookShelfFragment);
         mFragmentList.add(communityFragment);
         mFragmentList.add(discoveryFragment);
+        System.out.println("=====size===="+mFragmentList.size());
     }
 
     private void initTitle() {
@@ -173,7 +156,12 @@ public class BookFragment extends androidx.fragment.app.Fragment {
 
         @Override
         public Fragment getItem(int position) {
-            return mFragmentList.get(position);
+            if (position == 0) {
+                BookShelfFragment bookShelfFragment = new BookShelfFragment();
+                return bookShelfFragment;
+            } else {
+                return mFragmentList.get(position);
+            }
         }
 
         @Override
@@ -187,5 +175,12 @@ public class BookFragment extends androidx.fragment.app.Fragment {
             CharSequence title = titles.get(position);
             return title;
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        System.out.println("=====onDestroy====");
+        mFragmentList.clear();
     }
 }

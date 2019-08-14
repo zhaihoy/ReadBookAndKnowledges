@@ -70,6 +70,7 @@ public abstract class BaseFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         int resourceID = getResourceID();
+        System.out.println("=====base初始化===");
         return inflater.inflate(resourceID, container, false);
     }
 

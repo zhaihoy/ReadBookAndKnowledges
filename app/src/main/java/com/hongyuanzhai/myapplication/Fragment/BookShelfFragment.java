@@ -1,7 +1,5 @@
 package com.hongyuanzhai.myapplication.Fragment;
 
-import androidx.fragment.app.Fragment;
-
 import com.hongyuanzhai.myapplication.Base.BaseMVPFragment;
 import com.hongyuanzhai.myapplication.Contract.BookShelfContract;
 import com.hongyuanzhai.myapplication.R;
@@ -34,7 +32,9 @@ public class BookShelfFragment extends BaseMVPFragment<BookShelfContract.Present
     }
 
     @Override
-    protected int getResourceID() {
+    protected int getResourceID()
+    {
+        System.out.println("=======初始化布局==");
         return R.layout.fragment_bookshelf;
     }
 

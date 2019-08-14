@@ -2,5 +2,8 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <!--添加自定义布局中recycle的默认的北京市-->
+    <dimen name="nb.divider.line">0.5dp</dimen>
+
 
 </resources>

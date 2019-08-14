@@ -15,7 +15,9 @@ public abstract class BaseMVPFragment<T extends BaseContract.BasePresenter> exte
     @Override
     protected void initProcess() {
         mPresenter = bindPresenter();
-        mPresenter.attachView(this);
+        if (mPresenter!=null) {
+            mPresenter.attachView(this);
+        }
 
     }
 

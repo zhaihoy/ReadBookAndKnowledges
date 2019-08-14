@@ -1,39 +1,27 @@
 package com.hongyuanzhai.myapplication.Base;
 
 /**
- *
- * @param <T>  创建BaseMVPFragment 是MVP模式下的Fragment 的基类
+ * @param <T> 创建BaseMVPFragment 是MVP模式下的Fragment 的基类
  */
 
 public abstract class BaseMVPFragment<T extends BaseContract.BasePresenter> extends BaseFragment implements BaseContract.BaseView {
-    @Override
-    public void showError() {
 
-    }
 
-    @Override
-    public void completa() {
+    protected T mPresenter;
 
-    }
+    protected abstract T bindPresenter();
+
 
     @Override
     protected void initProcess() {
+        mPresenter = bindPresenter();
+        mPresenter.attachView(this);
 
     }
 
     @Override
-    protected void initClick() {
-
+    public void onDetach() {
+        super.onDetach();
+        mPresenter.detachView(this);
     }
-
-    @Override
-    protected void initDetail() {
-
-    }
-
-    @Override
-    protected void initData() {
-
-    }
-
 }

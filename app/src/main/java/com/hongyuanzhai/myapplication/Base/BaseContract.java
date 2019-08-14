@@ -5,7 +5,7 @@ public class BaseContract {
     /**
      * @param <T> 传入范型进行页面的绑定和接触
      */
-    interface BasePresenter<T> {
+    public interface BasePresenter<T> {
 
         void attachView(T view);
 
@@ -15,7 +15,7 @@ public class BaseContract {
     /**
      * 主要是页面具体具有的功能
      */
-    interface BaseView {
+    public interface BaseView {
 
         void showError();
 

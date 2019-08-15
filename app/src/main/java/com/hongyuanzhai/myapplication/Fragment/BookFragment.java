@@ -16,6 +16,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
@@ -148,16 +149,19 @@ public class BookFragment extends androidx.fragment.app.Fragment {
      * FragmentPagerAdapter
      */
 
-    private class mTabLayoutAdapter extends FragmentPagerAdapter {
+    private class mTabLayoutAdapter extends FragmentStatePagerAdapter {
         public mTabLayoutAdapter(FragmentManager fm) {
             super(fm);
+            System.out.println("=====mTabLayoutAdapter==");
 
         }
 
         @Override
         public Fragment getItem(int position) {
+            System.out.println("======="+position);
             if (position == 0) {
                 BookShelfFragment bookShelfFragment = new BookShelfFragment();
+                System.out.println("=======bookFragment==创建");
                 return bookShelfFragment;
             } else {
                 return mFragmentList.get(position);

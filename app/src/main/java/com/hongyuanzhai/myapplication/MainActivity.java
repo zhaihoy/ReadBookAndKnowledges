@@ -1,6 +1,5 @@
 package com.hongyuanzhai.myapplication;
 
-import android.app.FragmentManager;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -27,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-        private BookFragment bookFragment;
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -36,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
                       getSupportFragmentManager().beginTransaction().replace(R.id.fragment,fragments.get(0)).commit();
                     return true;
                 case R.id.navigation_dashboard:
-                    bookFragment = new BookFragment();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment, bookFragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragments.get(1)).commit();
                     return true;
                 case R.id.navigation_notifications:
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment,fragments.get(2)).commit();
@@ -46,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
-    private FrameLayout fragment;
     private ArrayList<Fragment> fragments;
+    private FrameLayout fragment;
 
     @Override
 

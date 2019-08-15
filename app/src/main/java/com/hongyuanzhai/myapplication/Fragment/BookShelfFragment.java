@@ -41,6 +41,8 @@ public class BookShelfFragment extends BaseMVPFragment<BookShelfContract.Present
     // 进行presenter绑定
     @Override
     protected BookShelfContract.Presenter bindPresenter() {
+        // 进行Presenter的与View的绑定 --->基类中完成
+
         return null;
     }
 }

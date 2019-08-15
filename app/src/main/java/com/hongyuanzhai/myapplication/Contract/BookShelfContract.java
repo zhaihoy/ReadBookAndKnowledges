@@ -1,7 +1,5 @@
 package com.hongyuanzhai.myapplication.Contract;
 
-import com.hongyuanzhai.myapplication.Base.BaseContract;
-
 /**
  * 将View和Presenter进行关联
  */

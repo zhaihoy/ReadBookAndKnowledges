@@ -1,5 +1,7 @@
 package com.hongyuanzhai.myapplication.Base;
 
+import com.hongyuanzhai.myapplication.Contract.BaseContract;
+
 /**
  * @param <T> 创建BaseMVPFragment 是MVP模式下的Fragment 的基类
  */

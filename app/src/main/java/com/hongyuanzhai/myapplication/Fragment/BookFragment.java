@@ -1,6 +1,5 @@
 package com.hongyuanzhai.myapplication.Fragment;
 
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -15,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -60,7 +58,6 @@ public class BookFragment extends androidx.fragment.app.Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.bookread_root, container, false);
         initView();
-        System.out.println("=====第  n  次====");
         return view;
     }
 
@@ -129,14 +126,12 @@ public class BookFragment extends androidx.fragment.app.Fragment {
 
     private void initFragment() {
         initTitle();
-        System.out.println("=====initFragment==");
         Fragment bookShelfFragment = new BookShelfFragment();
         Fragment communityFragment = new CommunityFragment();
         Fragment discoveryFragment = new FindFragment();
         mFragmentList.add(bookShelfFragment);
         mFragmentList.add(communityFragment);
         mFragmentList.add(discoveryFragment);
-        System.out.println("=====size===="+mFragmentList.size());
     }
 
     private void initTitle() {
@@ -147,21 +142,19 @@ public class BookFragment extends androidx.fragment.app.Fragment {
     /**
      * inner class
      * FragmentPagerAdapter
+     *    https://blog.csdn.net/qq_39956074/article/details/99634053  解决bug
      */
 
     private class mTabLayoutAdapter extends FragmentStatePagerAdapter {
         public mTabLayoutAdapter(FragmentManager fm) {
             super(fm);
-            System.out.println("=====mTabLayoutAdapter==");
 
         }
 
         @Override
         public Fragment getItem(int position) {
-            System.out.println("======="+position);
             if (position == 0) {
                 BookShelfFragment bookShelfFragment = new BookShelfFragment();
-                System.out.println("=======bookFragment==创建");
                 return bookShelfFragment;
             } else {
                 return mFragmentList.get(position);
@@ -184,7 +177,5 @@ public class BookFragment extends androidx.fragment.app.Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        System.out.println("=====onDestroy====");
-        mFragmentList.clear();
     }
 }

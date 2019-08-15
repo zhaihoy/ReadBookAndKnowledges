@@ -1,4 +1,4 @@
-package com.hongyuanzhai.myapplication.Base;
+package com.hongyuanzhai.myapplication.Contract;
 
 public class BaseContract {
 

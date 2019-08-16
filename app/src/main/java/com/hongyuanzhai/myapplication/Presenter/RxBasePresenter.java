@@ -13,14 +13,19 @@ import com.hongyuanzhai.myapplication.Contract.BaseContract;
  * ，调用compositeDisposable.dispose()就可以切断所有订阅事件，防止内存泄漏。
  */
 
-public class RxBasePresenter<T extends BaseContract.BaseView> implements BaseContract.BasePresenter {
-    @Override
-    public void attachView(Object view) {
 
+/************************************  需要进行数据的请求和网络数据的加载   *********************************/
+public class RxBasePresenter<T extends BaseContract.BaseView> implements BaseContract.BasePresenter<T> {
+    protected T mView;
+
+    @Override
+    public void attachView(T view) {
+        this.mView = view;
     }
-
     @Override
-    public void detachView(Object view) {
-
+    public void detachView(T view) {
+        if (this.mView != null) {
+            this.mView = null;
+        }
     }
 }

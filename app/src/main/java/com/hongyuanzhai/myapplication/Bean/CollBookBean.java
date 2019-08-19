@@ -1,8 +1,17 @@
 package com.hongyuanzhai.myapplication.Bean;
 
+import android.os.Parcel;
 import android.os.Parcelable;
 
 import androidx.room.Entity;
+
+import com.hongyuanzhai.myapplication.gen.CollBookBeanDao;
+
+import org.greenrobot.greendao.annotation.Generated;
+import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.ToMany;
+
+import java.util.List;
 
 @Entity
 public class CollBookBean implements Parcelable {
@@ -47,8 +56,8 @@ public class CollBookBean implements Parcelable {
     @ToMany(referencedJoinProperty = "bookId")
     private List<BookChapterBean> bookChapterList;
     /** Used to resolve relations */
-    @Generated(hash = 2040040024)
-    private transient DaoSession daoSession;
+//    @Generated(hash = 2040040024)
+//    private transient DaoSession daoSession;
     /** Used for active entity operations. */
     @Generated(hash = 1552163441)
     private transient CollBookBeanDao myDao;

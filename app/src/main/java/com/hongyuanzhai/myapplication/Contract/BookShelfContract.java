@@ -1,5 +1,7 @@
 package com.hongyuanzhai.myapplication.Contract;
 
+import com.hongyuanzhai.myapplication.Bean.CollBookBean;
+
 import java.util.List;
 
 /**
@@ -17,6 +19,10 @@ public class BookShelfContract {
 
     public interface Presenter extends BaseContract.BasePresenter<BookShelfContract.View> {
         //网络加载
+        void refreshCollBooks();
+        void createDownloadTask(CollBookBean collBookBean);
+        void updateCollBooks(List<CollBookBean> collBookBeans);
+        void loadRecommendBooks(String gender);
     }
 
 }

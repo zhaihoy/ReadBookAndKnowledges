@@ -1,8 +1,11 @@
 package com.hongyuanzhai.myapplication.Fragment;
 
 import com.hongyuanzhai.myapplication.Base.BaseMVPFragment;
+import com.hongyuanzhai.myapplication.Bean.CollBookBean;
 import com.hongyuanzhai.myapplication.Contract.BookShelfContract;
 import com.hongyuanzhai.myapplication.R;
+
+import java.util.List;
 
 public class BookShelfFragment extends BaseMVPFragment<BookShelfContract.Presenter> implements BookShelfContract.View {
 
@@ -44,5 +47,20 @@ public class BookShelfFragment extends BaseMVPFragment<BookShelfContract.Present
         // 进行Presenter的与View的绑定 --->基类中完成
 
         return null;
+    }
+
+    @Override
+    public void finishRefresh(List<CollBookBean> collBookBeans) {
+
+    }
+
+    @Override
+    public void finishUpdate() {
+
+    }
+
+    @Override
+    public void showErrorTip(String error) {
+
     }
 }

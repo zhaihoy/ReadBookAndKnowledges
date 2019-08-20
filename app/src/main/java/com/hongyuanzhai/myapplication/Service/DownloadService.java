@@ -313,7 +313,7 @@ public class DownloadService extends BaseService {
 //                            //设置加载结果
 //                            result[0] = LOAD_ERROR;
 //                        }
-                );
+//                );
 //        addDisposable(disposable);
         return result[0];
     }

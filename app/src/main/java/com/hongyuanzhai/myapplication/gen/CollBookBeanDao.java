@@ -20,6 +20,10 @@ public class CollBookBeanDao extends AbstractDao<CollBookBean, String> {
 
     public static final String TABLENAME = "COLL_BOOK_BEAN";
 
+    public CollBookBeanDao(DaoConfig config) {
+        super(config);
+    }
+
     /**
      * Properties of entity CollBookBean.<br/>
      * Can be used for QueryBuilder and for referencing column names.
@@ -41,17 +45,17 @@ public class CollBookBeanDao extends AbstractDao<CollBookBean, String> {
         public final static Property IsLocal = new Property(13, boolean.class, "isLocal", false, "IS_LOCAL");
     }
 
-    private DaoSession daoSession;
-
-
-    public CollBookBeanDao(DaoConfig config) {
-        super(config);
-    }
-    
-    public CollBookBeanDao(DaoConfig config, DaoSession daoSession) {
-        super(config, daoSession);
-        this.daoSession = daoSession;
-    }
+//    private DaoSession daoSession;
+//
+//
+//    public CollBookBeanDao(DaoConfig config) {
+//        super(config);
+//    }
+//
+//    public CollBookBeanDao(DaoConfig config, DaoSession daoSession) {
+//        super(config, daoSession);
+//        this.daoSession = daoSession;
+//    }
 
     /** Creates the underlying database table. */
     public static void createTable(Database db, boolean ifNotExists) {
@@ -184,7 +188,7 @@ public class CollBookBeanDao extends AbstractDao<CollBookBean, String> {
     @Override
     protected final void attachEntity(CollBookBean entity) {
         super.attachEntity(entity);
-        entity.__setDaoSession(daoSession);
+//        entity.__setDaoSession(daoSession);
     }
 
     @Override

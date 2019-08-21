@@ -4,8 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 
-import com.example.newbiechen.ireader.service.DownloadService;
-import com.squareup.leakcanary.LeakCanary;
+import com.hongyuanzhai.myapplication.Service.DownloadService;
+
 
 /**
  */
@@ -19,10 +19,10 @@ public class App extends Application {
         sInstance = this;
         startService(new Intent(getContext(), DownloadService.class));
 
-        // 初始化内存分析工具
-        if (!LeakCanary.isInAnalyzerProcess(this)) {
-            LeakCanary.install(this);
-        }
+//        // 初始化内存分析工具
+//        if (!LeakCanary.isInAnalyzerProcess(this)) {
+//            LeakCanary.install(this);
+//        }
     }
 
     public static Context getContext(){

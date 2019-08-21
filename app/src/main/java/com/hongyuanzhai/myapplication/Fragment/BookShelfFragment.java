@@ -37,7 +37,6 @@ public class BookShelfFragment extends BaseMVPFragment<BookShelfContract.Present
     @Override
     protected int getResourceID()
     {
-        System.out.println("=======初始化布局==");
         return R.layout.fragment_bookshelf;
     }
 

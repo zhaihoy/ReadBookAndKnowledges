@@ -6,7 +6,10 @@ import android.os.Parcelable;
 import androidx.room.Entity;
 
 import com.hongyuanzhai.myapplication.gen.CollBookBeanDao;
+import com.hongyuanzhai.myapplication.utils.StringUtils;
+import com.hongyuanzhai.myapplication.weight.refresh.App;
 
+import org.greenrobot.greendao.DaoException;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.ToMany;
@@ -216,14 +219,14 @@ public class CollBookBean implements Parcelable {
         }
     }
 
-    public List<BookChapterBean> getBookChapters(){
-        if (daoSession == null){
-            return bookChapterList;
-        }
-        else {
-            return getBookChapterList();
-        }
-    }
+//    public List<BookChapterBean> getBookChapters(){
+////        if (daoSession == null){
+////            return bookChapterList;
+////        }
+////        else {
+////            return getBookChapterList();
+////        }
+//    }
 
     /**
      * To-many relationship, resolved on first access (and after reset).
@@ -232,18 +235,18 @@ public class CollBookBean implements Parcelable {
     @Generated(hash = 711740787)
     public List<BookChapterBean> getBookChapterList() {
         if (bookChapterList == null) {
-            final DaoSession daoSession = this.daoSession;
-            if (daoSession == null) {
-                throw new DaoException("Entity is detached from DAO context");
-            }
-            BookChapterBeanDao targetDao = daoSession.getBookChapterBeanDao();
-            List<BookChapterBean> bookChapterListNew = targetDao
-                    ._queryCollBookBean_BookChapterList(_id);
-            synchronized (this) {
-                if (bookChapterList == null) {
-                    bookChapterList = bookChapterListNew;
-                }
-            }
+//            final DaoSession daoSession = this.daoSession;
+//            if (daoSession == null) {
+//                throw new DaoException("Entity is detached from DAO context");
+//            }
+//            BookChapterBeanDao targetDao = daoSession.getBookChapterBeanDao();
+//            List<BookChapterBean> bookChapterListNew = targetDao
+//                    ._queryCollBookBean_BookChapterList(_id);
+//            synchronized (this) {
+//                if (bookChapterList == null) {
+//                    bookChapterList = bookChapterListNew;
+//                }
+//            }
         }
         return bookChapterList;
     }
@@ -257,7 +260,6 @@ public class CollBookBean implements Parcelable {
 
 
     /**
-     * Convenient call for {@link org.greenrobot.greendao.AbstractDao#delete(Object)}.
      * Entity must attached to an entity context.
      */
     @Generated(hash = 128553479)
@@ -270,7 +272,6 @@ public class CollBookBean implements Parcelable {
 
 
     /**
-     * Convenient call for {@link org.greenrobot.greendao.AbstractDao#refresh(Object)}.
      * Entity must attached to an entity context.
      */
     @Generated(hash = 1942392019)
@@ -283,7 +284,6 @@ public class CollBookBean implements Parcelable {
 
 
     /**
-     * Convenient call for {@link org.greenrobot.greendao.AbstractDao#update(Object)}.
      * Entity must attached to an entity context.
      */
     @Generated(hash = 713229351)
@@ -295,12 +295,12 @@ public class CollBookBean implements Parcelable {
     }
 
 
-    /** called by internal mechanisms, do not call yourself. */
-    @Generated(hash = 159260324)
-    public void __setDaoSession(DaoSession daoSession) {
-        this.daoSession = daoSession;
-        myDao = daoSession != null ? daoSession.getCollBookBeanDao() : null;
-    }
+//    /** called by internal mechanisms, do not call yourself. */
+//    @Generated(hash = 159260324)
+//    public void __setDaoSession(DaoSession daoSession) {
+//        this.daoSession = daoSession;
+//        myDao = daoSession != null ? daoSession.getCollBookBeanDao() : null;
+//    }
 
     public boolean getIsLocal() {
         return this.isLocal;

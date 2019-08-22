@@ -8,12 +8,14 @@
     <Button
         android:id="@+id/bt_1"
         android:layout_width="match_parent"
-        android:layout_height="65dp" />
+        android:layout_height="65dp"
+        android:text="service" />
 
     <Button
         android:id="@+id/bt_2"
         android:layout_width="match_parent"
-        android:layout_height="65dp" />
+        android:layout_height="65dp"
+        />
 
     <Button
         android:id="@+id/bt_3"

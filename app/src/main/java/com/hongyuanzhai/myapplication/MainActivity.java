@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         //首先实例化
         fragments = getFragments();
         setDefaultFragment();
-
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 

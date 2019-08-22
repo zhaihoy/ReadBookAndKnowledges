@@ -188,6 +188,8 @@
     <string name="title_home">home</string>
     <string name="title_dashboard">E-Book</string>
     <string name="title_notifications">notification</string>
+    <string name="channel_name">翟</string>
+    <string name="channel_description">cool boy</string>
     notification
 
     <!--OpenCC-->
